@@ -14,6 +14,7 @@ syn case ignore
 
 syn match undocBack "<"
 syn region undocVariable start="^" end="$" contains=undocBack,undocType,undocDefault,undocDescription
+syn match undocInclude "^\s*!.*$"
 syn match undocComment "^\s*//.*$"
 syn region undocReturn start="->" end="$"
 syn match undocPackage "^\s*\[.*\]"
@@ -27,6 +28,7 @@ syn match undocDefault contained contains=undocDescription "@.*$"
 syn region undocCode start=">>" end=">>.*$"
 
 hi def link undocVariable Constant
+hi def link undocInclude Identifier
 hi def link undocType Type
 hi def link undocDefault Identifier
 hi def link undocComment Comment
